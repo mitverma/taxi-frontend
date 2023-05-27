@@ -1,0 +1,18 @@
+<header>
+    <div class="container-fluid">
+        <div class="clearfix">
+            <div class="float-start">
+                <h1><a href="">LOGO</a></h1>
+            </div>
+            <div class="float-end">
+                <nav class="menu">
+                    <ul>
+                        <li *ngFor="let list of routes">
+                            <a [routerLink]="list.routeTo">{{list.label}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
