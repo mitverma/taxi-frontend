@@ -4,6 +4,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
@@ -13,13 +17,19 @@ import {MatIconModule} from '@angular/material/icon';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatPaginatorModule,
   ]
 })
 export class MaterialModule { }

@@ -9,11 +9,44 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$yellow-palette: (
+  50 : #fff6e3,
+    100 : #feeab8,
+    200 : #fedc89,
+    300 : #fecd5a,
+    400 : #fdc336,
+    500 : #fdb813,
+    600 : #fdb111,
+    700 : #fca80e,
+    800 : #fca00b,
+    900 : #fc9106,
+    A100 : #ffffff,
+    A200 : #fff8f0,
+    A400 : #ffdfbd,
+    A700 : #ffd3a3,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$taxi-frontend-primary: mat.define-palette(mat.$yellow-palette);
-$taxi-frontend-accent: mat.define-palette(mat.$yellow-palette, A200, A100, A400);
+$taxi-frontend-primary: mat.define-palette($yellow-palette);
+$taxi-frontend-accent: mat.define-palette($yellow-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $taxi-frontend-warn: mat.define-palette(mat.$red-palette);
@@ -27,7 +60,6 @@ $taxi-frontend-theme: mat.define-light-theme((
     warn: $taxi-frontend-warn,
   )
 ));
-
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

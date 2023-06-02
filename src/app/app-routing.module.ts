@@ -7,7 +7,7 @@ const routes : Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'faq'
+    redirectTo: 'home',
   },
   {
     path: 'home',
@@ -15,7 +15,11 @@ const routes : Routes = [
   },
   {
     path: 'faq',
-    component: FaqComponent
+    component: FaqComponent,
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(list => list.AdminModule),
   }
 ];
 

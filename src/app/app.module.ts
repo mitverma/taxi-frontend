@@ -14,7 +14,7 @@ import { FaqComponent } from './faq/faq.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FaqComponent
+    FaqComponent,
   ],
   imports: [
     BrowserModule,
