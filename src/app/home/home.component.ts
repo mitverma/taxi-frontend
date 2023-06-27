@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  searchForm: FormGroup;
+  tripList: Array<any>;
+  minPickDate: Date = new Date();
+  maxPickDate: Date;
+  constructor() {
+    this.searchForm = new FormGroup({
+      tripType: new FormControl(1, [Validators.required]),
+      fromDest: new FormControl('Mumbai', [Validators.required]),
+      toDest: new FormControl('Pune', [Validators.required] ),
+      pickupDate: new FormControl('', [Validators.required]),
+      returnDate: new FormControl({value: '', disabled: true}),
+      pickupTime: new FormControl('', [Validators.required]),
+    });
+    this.tripList = [
+      {
+        name: 'One-way Trip',
+        value: 1,
+      },
+      {
+        name: 'Round Trip',
+        value: 2,
+      },
+      {
+        name: 'Hourly Rental',
+        value: 3,
+      }
+    ]
+  }
 
   ngOnInit(): void {
+  }
+
+  selectedTripType(tripType: any){
+    this.searchForm.patchValue({tripType: tripType.value});
+    this.searchForm.get('returnDate')?.enable();
+    if(tripType.value == 1){
+      this.searchForm.get('returnDate')?.disable();
+    }
+    this.searchForm.get('returnDate')?.updateValueAndValidity();
   }
 
 }

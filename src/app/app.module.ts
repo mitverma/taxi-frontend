@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material/material.module';
 import { FaqComponent } from './faq/faq.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FaqComponent } from './faq/faq.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

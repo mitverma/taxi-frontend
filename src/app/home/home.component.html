@@ -1,1 +1,52 @@
-<p>home works!</p>
+<div class="banner-wrapper">
+    <div class="container">
+        <h3 class="text-center">Enjoy Your Comfortable Ride In Affrodable Price</h3>
+        <div class="form-wrapper">
+            <form [formGroup]="searchForm">
+                <div class="row justify-content-center trip-type">
+                    <ul class="row col-9">
+                        <li class="col-4" *ngFor="let item of tripList;" [ngClass]="{  'active' : searchForm.get('tripType')?.value == item.value}" (click)="selectedTripType(item)">{{item.name}}</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="form-control col">
+                        <mat-form-field>
+                            <mat-label>From</mat-label>
+                            <input type="text" matInput formControlName="fromDest">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control col">
+                        <mat-form-field>
+                            <mat-label>To</mat-label>
+                            <input type="text" matInput formControlName="toDest">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control col">
+                        <mat-form-field>
+                            <mat-label>Pickup Date</mat-label>
+                            <input type="text" [min]="minPickDate" [max]="maxPickDate" matInput [matDatepicker]="picker" formControlName="pickupDate">
+                            <mat-datepicker-toggle [for]="picker" matSuffix>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control col">
+                        <mat-form-field>
+                            <mat-label>Return Date</mat-label>
+                            <input matInput [matDatepicker]="pickerReturnDate" formControlName="returnDate">
+                            <mat-datepicker-toggle matSuffix [for]="pickerReturnDate"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerReturnDate></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control col">
+                        <mat-form-field>
+                            <mat-label>Pickup Time</mat-label>
+                            <input type="text" matInput formControlName="pickupDate" [ngxTimepicker]="pickerTime">
+                            <ngx-material-timepicker #pickerTime></ngx-material-timepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

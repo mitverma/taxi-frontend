@@ -7,6 +7,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 
@@ -21,6 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    NgxMaterialTimepickerModule
   ],
   exports: [
     MatExpansionModule,
@@ -30,6 +36,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableModule,
     MatButtonModule,
     MatPaginatorModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    NgxMaterialTimepickerModule
   ]
 })
 export class MaterialModule { }
