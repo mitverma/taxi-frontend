@@ -8,45 +8,146 @@
                         <li class="col-4" *ngFor="let item of tripList;" [ngClass]="{  'active' : searchForm.get('tripType')?.value == item.value}" (click)="selectedTripType(item)">{{item.name}}</li>
                     </ul>
                 </div>
-                <div class="row">
-                    <div class="form-control col">
-                        <mat-form-field>
-                            <mat-label>From</mat-label>
-                            <input type="text" matInput formControlName="fromDest">
-                        </mat-form-field>
+                <div class="row g-0">
+                    <div class="col-3">
+                        <div class="form-control first-input select">
+                            <mat-form-field class="w-100">
+                                <mat-label>From</mat-label>
+                                <mat-select formControlName="fromDest">
+                                    <input type="text" class="select-search-input" matInput placeholder="From" (input)="searchPlace($event)">
+                                    <mat-option *ngFor="let item of destinationList" [value]="item.value">
+                                        {{item.name}}
+                                    </mat-option>
+                                    <mat-option *ngIf="destinationList.length == 0">No Records Found !!</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
                     </div>
-                    <div class="form-control col">
-                        <mat-form-field>
-                            <mat-label>To</mat-label>
-                            <input type="text" matInput formControlName="toDest">
-                        </mat-form-field>
+                    <div class="col-3">
+                        <div class="form-control select">
+                            <mat-form-field class="w-100">
+                                <mat-label>To</mat-label>
+                                <mat-select formControlName="toDest">
+                                    <input type="text" class="select-search-input" matInput placeholder="To" (input)="searchPlace($event)">
+                                    <mat-option *ngFor="let item of destinationList" [value]="item.value">
+                                        {{item.name}}
+                                    </mat-option>
+                                    <mat-option *ngIf="destinationList.length == 0">No Records Found !!</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
                     </div>
-                    <div class="form-control col">
-                        <mat-form-field>
-                            <mat-label>Pickup Date</mat-label>
-                            <input type="text" [min]="minPickDate" [max]="maxPickDate" matInput [matDatepicker]="picker" formControlName="pickupDate">
-                            <mat-datepicker-toggle [for]="picker" matSuffix>
-                            </mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
+                    <div class="col-2">
+                        <div class="form-control">
+                            <mat-form-field class="w-100">
+                                <mat-label>Pickup Date</mat-label>
+                                <input type="text" [min]="minPickDate" [max]="maxPickDate" matInput [matDatepicker]="picker" formControlName="pickupDate">
+                                <mat-datepicker-toggle [for]="picker" matSuffix>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
                     </div>
-                    <div class="form-control col">
-                        <mat-form-field>
-                            <mat-label>Return Date</mat-label>
-                            <input matInput [matDatepicker]="pickerReturnDate" formControlName="returnDate">
-                            <mat-datepicker-toggle matSuffix [for]="pickerReturnDate"></mat-datepicker-toggle>
-                            <mat-datepicker #pickerReturnDate></mat-datepicker>
-                        </mat-form-field>
+                    <div class="col-2">
+                        <div class="form-control">
+                            <mat-form-field class="w-100">
+                                <mat-label>Return Date</mat-label>
+                                <input matInput [matDatepicker]="pickerReturnDate" formControlName="returnDate">
+                                <mat-datepicker-toggle matSuffix [for]="pickerReturnDate"></mat-datepicker-toggle>
+                                <mat-datepicker #pickerReturnDate></mat-datepicker>
+                            </mat-form-field>
+                        </div>
                     </div>
-                    <div class="form-control col">
-                        <mat-form-field>
-                            <mat-label>Pickup Time</mat-label>
-                            <input type="text" matInput formControlName="pickupDate" [ngxTimepicker]="pickerTime">
-                            <ngx-material-timepicker #pickerTime></ngx-material-timepicker>
-                        </mat-form-field>
+                    <div class="col-2">
+                        <div class="form-control last-input">
+                            <mat-form-field class="w-100">
+                                <mat-label>Pickup Time</mat-label>
+                                <input type="text" matInput formControlName="pickupDate" [ngxTimepicker]="pickerTime">
+                                <ngx-material-timepicker #pickerTime></ngx-material-timepicker>
+                            </mat-form-field>
+                        </div>
                     </div>
+                </div>
+                <div class="search">
+                    <button mat-raised-button color="primary">Let's Ride</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<!-- search detail section -->
+<section class="search-detail-section">
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="detail-search-wrapper"></div>
+            <div class="row">
+                <div class="col-4">
+                    <aside class="fare-details-info">
+                        <ul>
+                            <span class="fare-title">Fare Details</span>
+                            <li><span>Base Fare</span><span>Included</span></li>
+                            <li><span>GST(5% on Base Fare)</span><span>Not Included</span></li>
+                            <li><span>State Toll Tax</span><span>Included</span></li>
+                            <li><span>Included KMs</span><span>148KM</span></li>
+                            <li><span>Vechicles & Fuel Charges</span><span>Included</span></li>
+                            <li><span>One Pickup & Drop</span><span>Included</span></li>
+                        </ul>
+                        <ul>
+                            <span class="fare-title">Other Charges</span>
+                            <li><span>Parking & Airport Entry</span><span>If Applicable</span></li>
+                            <li><span>Waiting Charges</span><span>₹2/Min</span></li>
+                            <li><span>Night Charges</span><span>₹250/Day</span></li>
+                            <li><span>Extra Pickup/Drop</span><span>₹99</span></li>
+                        </ul>
+                        <ul>
+                            <span class="fare-title">Extra Kms Charges</span>
+                            <li><span>Economy</span><span>₹15/KM</span></li>
+                            <li><span>Comfort</span><span>₹15/KM</span></li>
+                            <li><span>Premium</span><span>₹15/KM</span></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-8">
+                    <div class="cab-list-wrapper" *ngFor="let list of cabList;">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="vehcile-type">
+                                    <img src="{{list.img}}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <h4 class="cab-title">{{list.name}}</h4>
+                                <span class="car-type">Indica/Wagonr Or Similar</span>
+                                <div class="car-features-type">
+                                    <span>Car Features</span>
+                                    <ul>
+                                        <li>
+                                            <span>AC</span>
+                                        </li>
+                                        <li>
+                                            <span>Bags</span>
+                                        </li>
+                                        <li>
+                                            <span>4 Seaters</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="price-info-wrapper text-end">
+                                    <span class="d-block offer">13% OFF</span>
+                                    <h4 class="discounted-price"><span>₹ </span>{{list.price}}</h4>
+                                    <span class="d-block">Inclusive Of Toll & Sate Tax</span>
+                                    <button mat-raised-button color="primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- search detail section end -->

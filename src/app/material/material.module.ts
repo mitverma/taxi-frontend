@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatSelectModule } from '@angular/material/select';
+// import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
 
@@ -26,7 +28,8 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MatPaginatorModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    // NgxMatSelectSearchModule
   ],
   exports: [
     MatExpansionModule,
@@ -38,7 +41,9 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MatPaginatorModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    MatSelectModule,
+    // NgxMatSelectSearchModule,
   ]
 })
 export class MaterialModule { }

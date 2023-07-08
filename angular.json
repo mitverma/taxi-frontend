@@ -113,5 +113,8 @@
       }
     }
   },
-  "defaultProject": "taxi-frontend"
+  "defaultProject": "taxi-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
