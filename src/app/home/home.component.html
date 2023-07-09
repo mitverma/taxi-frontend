@@ -62,14 +62,14 @@
                         <div class="form-control last-input">
                             <mat-form-field class="w-100">
                                 <mat-label>Pickup Time</mat-label>
-                                <input type="text" matInput formControlName="pickupDate" [ngxTimepicker]="pickerTime">
+                                <input type="text" matInput formControlName="pickupTime" [ngxTimepicker]="pickerTime">
                                 <ngx-material-timepicker #pickerTime></ngx-material-timepicker>
                             </mat-form-field>
                         </div>
                     </div>
                 </div>
                 <div class="search">
-                    <button mat-raised-button color="primary">Let's Ride</button>
+                    <button mat-raised-button color="primary" (click)="search();">Let's Ride</button>
                 </div>
             </form>
         </div>
@@ -78,7 +78,7 @@
 
 
 <!-- search detail section -->
-<section class="search-detail-section">
+<section class="search-detail-section" *ngIf="showCarList">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="detail-search-wrapper"></div>

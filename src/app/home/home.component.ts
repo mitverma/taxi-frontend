@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -14,13 +15,14 @@ export class HomeComponent implements OnInit {
   destinationList: Array<any>;
   destinationListDeepClone: Array<any>;
   cabList : Array<any>;
+  showCarList: boolean = false;
   constructor() {
     this.searchForm = new FormGroup({
       tripType: new FormControl(1, [Validators.required]),
       fromDest: new FormControl('Mumbai', [Validators.required]),
       toDest: new FormControl('Pune', [Validators.required] ),
-      pickupDate: new FormControl('', [Validators.required]),
-      returnDate: new FormControl({value: '', disabled: true}),
+      pickupDate: new FormControl(moment().format(), [Validators.required]),
+      returnDate: new FormControl({value: moment().add(1, 'days').format(), disabled: true}),
       pickupTime: new FormControl('', [Validators.required]),
     });
     this.tripList = [
@@ -96,5 +98,13 @@ export class HomeComponent implements OnInit {
       this.destinationList = this.destinationListDeepClone;
     }
   }
+
+  search(){
+    this.showCarList = true;
+    setTimeout(() => {
+      let elementVal = document.getElementsByClassName('search-detail-section')[0];
+      elementVal.scrollIntoView();
+    }, 100);
+    }
 
 }
