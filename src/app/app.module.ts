@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material/material.module';
 import { FaqComponent } from './faq/faq.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpServiceService } from './shared/http-service.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

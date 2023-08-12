@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminRoutesComponent } from './admin-routes/admin-routes.component';
 import { AdminComponent } from './admin.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { CitiesComponent } from './cities/cities.component';
 import { DriversComponent } from './drivers/drivers.component';
 
 const routes: Routes = [
@@ -19,9 +20,13 @@ const routes: Routes = [
     component: DriversComponent
   },
   {
+    path: 'cities',
+    component: CitiesComponent
+  },
+  {
     path: '',
     component: AdminComponent,
-  },
+  },  
 ];
 
 @NgModule({

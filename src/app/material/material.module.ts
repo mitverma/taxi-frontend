@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatSelectModule } from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 // import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
@@ -29,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatNativeDateModule,
     MatDatepickerModule,
     NgxMaterialTimepickerModule,
+    MatChipsModule
     // NgxMatSelectSearchModule
   ],
   exports: [
@@ -43,6 +45,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,
     NgxMaterialTimepickerModule,
     MatSelectModule,
+    MatChipsModule
     // NgxMatSelectSearchModule,
   ]
 })

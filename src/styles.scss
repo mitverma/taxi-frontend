@@ -72,9 +72,9 @@ $taxi-frontend-theme: mat.define-light-theme((
   src: url('./assets/Figtree/static/Figtree-Regular.ttf');
 }
 
-* {
-  font-family: Figtree, "Helvetica Neue", sans-serif !important;
-}
+// * {
+//   font-family: Figtree, "Helvetica Neue", sans-serif !important;
+// }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Figtree, "Helvetica Neue", sans-serif; }

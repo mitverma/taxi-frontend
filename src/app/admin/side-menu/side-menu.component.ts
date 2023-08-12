@@ -23,6 +23,10 @@ export class SideMenuComponent implements OnInit {
         label: 'Drivers',
         routeTo: 'drivers'
       },
+      {
+        label: 'Cities',
+        routeTo: 'cities'
+      },
     ]
   }
 

@@ -7,6 +7,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { MaterialModule } from '../material/material.module';
 import { AdminRoutesComponent } from './admin-routes/admin-routes.component';
+import { CitiesComponent } from './cities/cities.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AdminRoutesComponent } from './admin-routes/admin-routes.component';
     SideMenuComponent,
     BookingsComponent,
     AdminRoutesComponent,
+    CitiesComponent,
   ],
   imports: [
     CommonModule,
